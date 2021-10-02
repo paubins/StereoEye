@@ -25,6 +25,11 @@
 		609EFCCA231BB5FC00387076 /* grayscaleKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 609EFCC9231BB5FC00387076 /* grayscaleKernel.metal */; };
 		609EFCCC231BB70700387076 /* pixellateKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 609EFCCB231BB70700387076 /* pixellateKernel.metal */; };
 		609EFCCE231BC5B500387076 /* boxBlurKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 609EFCCD231BC5B500387076 /* boxBlurKernel.metal */; };
+		C12CA00226332D5B002C3FDE /* lighthouse2.png in Resources */ = {isa = PBXBuildFile; fileRef = C12CA00126332D5B002C3FDE /* lighthouse2.png */; };
+		C16495B1263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C16495B0263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg */; };
+		C16495BD2637151B00D6C40C /* LzJQx.png in Resources */ = {isa = PBXBuildFile; fileRef = C16495BC2637151B00D6C40C /* LzJQx.png */; };
+		C16495C02637169A00D6C40C /* depth_scene.png in Resources */ = {isa = PBXBuildFile; fileRef = C16495BF2637169A00D6C40C /* depth_scene.png */; };
+		C1D97A932631E5130031EA94 /* autostereogramKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = C1D97A922631E5120031EA94 /* autostereogramKernel.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		609EFCC9231BB5FC00387076 /* grayscaleKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = grayscaleKernel.metal; sourceTree = "<group>"; };
 		609EFCCB231BB70700387076 /* pixellateKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = pixellateKernel.metal; sourceTree = "<group>"; };
 		609EFCCD231BC5B500387076 /* boxBlurKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = boxBlurKernel.metal; sourceTree = "<group>"; };
+		C12CA00126332D5B002C3FDE /* lighthouse2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lighthouse2.png; sourceTree = "<group>"; };
+		C16495B0263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1268150054.brallion_horse_head_map.jpg; sourceTree = "<group>"; };
+		C16495BC2637151B00D6C40C /* LzJQx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LzJQx.png; sourceTree = "<group>"; };
+		C16495BF2637169A00D6C40C /* depth_scene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = depth_scene.png; sourceTree = "<group>"; };
+		C1D97A922631E5120031EA94 /* autostereogramKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = autostereogramKernel.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,10 @@
 		6018089F22E872AD009057A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C16495BF2637169A00D6C40C /* depth_scene.png */,
+				C16495BC2637151B00D6C40C /* LzJQx.png */,
+				C16495B0263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg */,
+				C12CA00126332D5B002C3FDE /* lighthouse2.png */,
 				609EFCBF231BAA3900387076 /* lighthouse.jpg */,
 				609EFCB5231B226C00387076 /* Assets.xcassets */,
 				6018089522E871F3009057A8 /* Info.plist */,
@@ -155,6 +169,7 @@
 				609EFCC9231BB5FC00387076 /* grayscaleKernel.metal */,
 				609EFCCB231BB70700387076 /* pixellateKernel.metal */,
 				609EFCCD231BC5B500387076 /* boxBlurKernel.metal */,
+				C1D97A922631E5120031EA94 /* autostereogramKernel.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -217,7 +232,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12CA00226332D5B002C3FDE /* lighthouse2.png in Resources */,
+				C16495BD2637151B00D6C40C /* LzJQx.png in Resources */,
 				6018089422E871F3009057A8 /* LaunchScreen.storyboard in Resources */,
+				C16495B1263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg in Resources */,
+				C16495C02637169A00D6C40C /* depth_scene.png in Resources */,
 				609EFCC0231BAA3900387076 /* lighthouse.jpg in Resources */,
 				609EFCB6231B226C00387076 /* Assets.xcassets in Resources */,
 				6018088F22E871F2009057A8 /* Main.storyboard in Resources */,
@@ -231,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1D97A932631E5130031EA94 /* autostereogramKernel.metal in Sources */,
 				609EFCC8231BB4EF00387076 /* gammaKernel.metal in Sources */,
 				601808AA22E876B9009057A8 /* passthroughKernel.metal in Sources */,
 				609EFCCC231BB70700387076 /* pixellateKernel.metal in Sources */,
@@ -391,8 +411,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4Q87YJE27;
+				DEVELOPMENT_TEAM = 42N9D6EK46;
 				INFOPLIST_FILE = "$(SRCROOT)/MetalCamera/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,8 +430,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4Q87YJE27;
+				DEVELOPMENT_TEAM = 42N9D6EK46;
 				INFOPLIST_FILE = "$(SRCROOT)/MetalCamera/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

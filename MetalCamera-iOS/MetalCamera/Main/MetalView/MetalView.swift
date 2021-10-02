@@ -22,7 +22,13 @@ final class MetalView: MTKView {
     private let grayscaleKernel = "grayscaleKernel"
     private let pixellateKernel = "pixellateKernel"
     private let boxBlurKernel = "boxBlurKernel"
+    private let autostereogramKernel = "autostereogramKernel"
     
+    var textureLoader:MTKTextureLoader? = nil
+    var inputTextureLighthouse: MTLTexture? = nil
+    var inputTextureLighthouse2: MTLTexture? = nil
+    var showDepth:Bool = false
+    var showNext:Bool = false
     
     var pixelBuffer: CVPixelBuffer? {
         didSet {
@@ -44,7 +50,7 @@ final class MetalView: MTKView {
         let url = Bundle.main.url(forResource: "default", withExtension: "metallib")
         do {
             let library = try metalDevice.makeLibrary(filepath: url!.path)
-            guard let function = library.makeFunction(name: pixellateKernel) else {
+            guard let function = library.makeFunction(name: autostereogramKernel) else {
                 fatalError("Unable to create gpu kernel")
             }
             computePipelineState = try metalDevice.makeComputePipelineState(function: function)
@@ -63,8 +69,19 @@ final class MetalView: MTKView {
         super.init(coder: coder)
         device = metalDevice
         
-        drawableSize.width = 720
-        drawableSize.height = 1280
+        drawableSize.width = 256
+        drawableSize.height = 192
+        
+        framebufferOnly = false
+        
+        depthStencilPixelFormat = .r32Float
+        
+        textureLoader = MTKTextureLoader(device: device!)
+        if let textureLoader = textureLoader {
+            inputTextureLighthouse = try! textureLoader.newTexture(URL: Bundle.main.url(forResource: "lighthouse2", withExtension: "png")!, options: nil)
+            inputTextureLighthouse2 = try! textureLoader.newTexture(URL: Bundle.main.url(forResource: "depth_scene", withExtension: "png")!, options: nil)
+        }
+
     }
     
     override func draw(_ rect: CGRect) {
@@ -81,21 +98,22 @@ final class MetalView: MTKView {
         let height = CVPixelBufferGetHeight(pixelBuffer)
         var cvTextureOut: CVMetalTexture?
         CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache!, pixelBuffer, nil, .bgra8Unorm, width, height, 0, &cvTextureOut)
-        
         guard let cvTexture = cvTextureOut, let inputTexture = CVMetalTextureGetTexture(cvTexture) else {
             fatalError("Failed to create metal textures")
         }
         
         // Debug image
-//        let textureLoader = MTKTextureLoader(device: device!)
-//        let inputTexture: MTLTexture = try! textureLoader.newTexture( URL: Bundle.main.url(forResource: "lighthouse", withExtension: "jpg")!, options: nil)
 
         guard let drawable: CAMetalDrawable = self.currentDrawable else { fatalError("Failed to create drawable") }
+        
+        let buffer = device!.makeBuffer(bytes: &showDepth, length: MemoryLayout<Int>.size, options: [])
         
         if let commandQueue = commandQueue, let commandBuffer = commandQueue.makeCommandBuffer(), let computeCommandEncoder = commandBuffer.makeComputeCommandEncoder() {
             computeCommandEncoder.setComputePipelineState(computePipelineState)
             computeCommandEncoder.setTexture(inputTexture, index: 0)
             computeCommandEncoder.setTexture(drawable.texture, index: 1)
+            computeCommandEncoder.setTexture(inputTextureLighthouse, index: 2)
+            computeCommandEncoder.setBytes(&showDepth, length: MemoryLayout<Int>.size, index: 0)
             computeCommandEncoder.dispatchThreadgroups(inputTexture.threadGroups(), threadsPerThreadgroup: inputTexture.threadGroupCount())
             computeCommandEncoder.endEncoding()
             commandBuffer.present(drawable)
@@ -107,7 +125,7 @@ final class MetalView: MTKView {
 extension MTLTexture {
     
     func threadGroupCount() -> MTLSize {
-        return MTLSizeMake(8, 8, 1)
+        return MTLSizeMake(16, 16, 1)
     }
     
     func threadGroups() -> MTLSize {
