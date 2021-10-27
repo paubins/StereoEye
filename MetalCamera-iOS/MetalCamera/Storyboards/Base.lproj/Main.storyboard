@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,36 +19,60 @@
                             <mtkView contentMode="scaleAspectFit" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" paused="YES" enableSetNeedsDisplay="YES" autoResizeDrawable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-Ts-tNS" customClass="MetalView" customModule="MetalCamera" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mtkView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-KM-1ts">
-                                <rect key="frame" x="165" y="832" width="84" height="30"/>
-                                <state key="normal" title="Show Depth"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="197" translatesAutoresizingMaskIntoConstraints="NO" id="Fej-c7-M97">
+                                <rect key="frame" x="56.5" y="832" width="301" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-KM-1ts">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                        <state key="normal" title="Show Depth"/>
+                                        <connections>
+                                            <action selector="cycleTexturesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKE-C8-AjR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhe-Gt-TWG">
+                                        <rect key="frame" x="281" y="0.0" width="20" height="30"/>
+                                        <connections>
+                                            <action selector="cycleTextures:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3cV-5d-qJV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-Bv-mQb">
+                                <rect key="frame" x="172" y="793" width="70" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Record"/>
                                 <connections>
-                                    <action selector="cycleTexturesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKE-C8-AjR"/>
+                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="672-pE-lDE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhe-Gt-TWG">
-                                <rect key="frame" x="323" y="832" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cycle"/>
-                                <connections>
-                                    <action selector="cycleTextures:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gd-xb-Kf9"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-2Q-zsR">
+                                <rect key="frame" x="49" y="793" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Import"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5LG-Bv-mQb" firstAttribute="centerX" secondItem="sFf-Ts-tNS" secondAttribute="centerX" id="0va-FC-LFY"/>
+                            <constraint firstItem="KX6-2Q-zsR" firstAttribute="top" secondItem="sFf-Ts-tNS" secondAttribute="bottom" constant="-103" id="2iT-EI-mQF"/>
+                            <constraint firstItem="Fej-c7-M97" firstAttribute="leading" secondItem="sFf-Ts-tNS" secondAttribute="trailing" constant="-357.5" id="6bX-gI-odo"/>
+                            <constraint firstItem="Fej-c7-M97" firstAttribute="top" secondItem="5LG-Bv-mQb" secondAttribute="bottom" constant="8" symbolic="YES" id="AN8-Nb-Kb4"/>
                             <constraint firstItem="sFf-Ts-tNS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DkP-VU-DpF"/>
-                            <constraint firstItem="OqN-KM-1ts" firstAttribute="centerX" secondItem="sFf-Ts-tNS" secondAttribute="centerX" id="MDF-hq-OGe"/>
+                            <constraint firstItem="Fej-c7-M97" firstAttribute="centerX" secondItem="sFf-Ts-tNS" secondAttribute="centerX" id="InH-ti-fiM"/>
                             <constraint firstAttribute="bottom" secondItem="sFf-Ts-tNS" secondAttribute="bottom" id="Qnr-Xo-rRS"/>
+                            <constraint firstItem="KX6-2Q-zsR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="a85-iH-ROl"/>
                             <constraint firstAttribute="trailing" secondItem="sFf-Ts-tNS" secondAttribute="trailing" id="bvv-p9-ZAe"/>
+                            <constraint firstItem="5LG-Bv-mQb" firstAttribute="top" secondItem="sFf-Ts-tNS" secondAttribute="bottom" constant="-103" id="hHO-Oa-rRf"/>
                             <constraint firstItem="sFf-Ts-tNS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lIg-bE-Nff"/>
-                            <constraint firstItem="OqN-KM-1ts" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xRe-dM-mXk"/>
+                            <constraint firstItem="OqN-KM-1ts" firstAttribute="top" secondItem="KX6-2Q-zsR" secondAttribute="bottom" constant="8" symbolic="YES" id="onP-W1-P2p"/>
+                            <constraint firstItem="Fej-c7-M97" firstAttribute="top" secondItem="sFf-Ts-tNS" secondAttribute="bottom" constant="-64" id="vuW-Sx-pii"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cycleTextures" destination="OqN-KM-1ts" id="YqS-Wh-dsX"/>
                         <outlet property="metalView" destination="sFf-Ts-tNS" id="JNA-D8-nTg"/>
+                        <outlet property="recordButton" destination="5LG-Bv-mQb" id="rQH-UF-iFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

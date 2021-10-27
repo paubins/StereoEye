@@ -25,11 +25,29 @@
 		609EFCCA231BB5FC00387076 /* grayscaleKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 609EFCC9231BB5FC00387076 /* grayscaleKernel.metal */; };
 		609EFCCC231BB70700387076 /* pixellateKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 609EFCCB231BB70700387076 /* pixellateKernel.metal */; };
 		609EFCCE231BC5B500387076 /* boxBlurKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 609EFCCD231BC5B500387076 /* boxBlurKernel.metal */; };
+		C100BA5F271488E300AF9F2C /* sample-5s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C100BA5E271488E300AF9F2C /* sample-5s.mp4 */; };
+		C100BA612714918300AF9F2C /* sample-mp4-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C100BA602714915D00AF9F2C /* sample-mp4-video.mp4 */; };
+		C100BA632714A36500AF9F2C /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C100BA622714A36500AF9F2C /* test.mp4 */; };
+		C100BA6B2715B5D800AF9F2C /* SampleBufferSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100BA6A2715B5D700AF9F2C /* SampleBufferSerializer.swift */; };
+		C100BA6F27161EAE00AF9F2C /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C100BA6E27161EAE00AF9F2C /* shaders.metal */; };
+		C100BA71271626DF00AF9F2C /* passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = C100BA70271626DF00AF9F2C /* passthrough.metal */; };
+		C100BA732716405400AF9F2C /* basic_shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C100BA722716405400AF9F2C /* basic_shaders.metal */; };
+		C100BA75271648B800AF9F2C /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C100BA74271648B800AF9F2C /* AAPLShaders.metal */; };
+		C100BA7D27173CAD00AF9F2C /* MetalCamera-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = C100BA7827173B2B00AF9F2C /* MetalCamera-Bridging-Header.h */; };
+		C10B70AE2726FC3E007FAAD6 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10B70AC2726FC3E007FAAD6 /* CoreAudio.framework */; };
+		C10B70AF2726FC3E007FAAD6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10B70AD2726FC3E007FAAD6 /* AudioToolbox.framework */; };
+		C10B70B327276DE8007FAAD6 /* testcall.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C10B70B227276DE8007FAAD6 /* testcall.mp4 */; };
+		C10B70B527276F09007FAAD6 /* farucca.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C10B70B427276F09007FAAD6 /* farucca.mp4 */; };
 		C12CA00226332D5B002C3FDE /* lighthouse2.png in Resources */ = {isa = PBXBuildFile; fileRef = C12CA00126332D5B002C3FDE /* lighthouse2.png */; };
+		C13AA6402728461800D20CDD /* dua_lipa.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C13AA63F2728461800D20CDD /* dua_lipa.mp4 */; };
 		C16495B1263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C16495B0263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg */; };
 		C16495BD2637151B00D6C40C /* LzJQx.png in Resources */ = {isa = PBXBuildFile; fileRef = C16495BC2637151B00D6C40C /* LzJQx.png */; };
 		C16495C02637169A00D6C40C /* depth_scene.png in Resources */ = {isa = PBXBuildFile; fileRef = C16495BF2637169A00D6C40C /* depth_scene.png */; };
+		C1CFE4472720B64900165F9E /* buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = C1CFE4462720B64900165F9E /* buttons.png */; };
+		C1CFE44B27234C3800165F9E /* SimpleAudioQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFE44A27234C3800165F9E /* SimpleAudioQueue.swift */; };
 		C1D97A932631E5130031EA94 /* autostereogramKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = C1D97A922631E5120031EA94 /* autostereogramKernel.metal */; };
+		C1EDFF8B270BCC0D00D5C02E /* Rectangle@3x-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = C1EDFF8A270BCC0D00D5C02E /* Rectangle@3x-1024.png */; };
+		C1F78FD7270FC10F008823F0 /* MetalVideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78FD6270FC10E008823F0 /* MetalVideoRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,11 +71,30 @@
 		609EFCC9231BB5FC00387076 /* grayscaleKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = grayscaleKernel.metal; sourceTree = "<group>"; };
 		609EFCCB231BB70700387076 /* pixellateKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = pixellateKernel.metal; sourceTree = "<group>"; };
 		609EFCCD231BC5B500387076 /* boxBlurKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = boxBlurKernel.metal; sourceTree = "<group>"; };
+		C100BA5E271488E300AF9F2C /* sample-5s.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-5s.mp4"; sourceTree = "<group>"; };
+		C100BA602714915D00AF9F2C /* sample-mp4-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-mp4-video.mp4"; sourceTree = "<group>"; };
+		C100BA622714A36500AF9F2C /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		C100BA6A2715B5D700AF9F2C /* SampleBufferSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleBufferSerializer.swift; sourceTree = "<group>"; };
+		C100BA6E27161EAE00AF9F2C /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
+		C100BA70271626DF00AF9F2C /* passthrough.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = passthrough.metal; sourceTree = "<group>"; };
+		C100BA722716405400AF9F2C /* basic_shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = basic_shaders.metal; sourceTree = "<group>"; };
+		C100BA74271648B800AF9F2C /* AAPLShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AAPLShaders.metal; sourceTree = "<group>"; };
+		C100BA772716491C00AF9F2C /* AAPLShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLShaderTypes.h; sourceTree = "<group>"; };
+		C100BA7827173B2B00AF9F2C /* MetalCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalCamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		C10B70AC2726FC3E007FAAD6 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C10B70AD2726FC3E007FAAD6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C10B70B227276DE8007FAAD6 /* testcall.mp4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testcall.mp4; sourceTree = "<group>"; };
+		C10B70B427276F09007FAAD6 /* farucca.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = farucca.mp4; sourceTree = "<group>"; };
 		C12CA00126332D5B002C3FDE /* lighthouse2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lighthouse2.png; sourceTree = "<group>"; };
+		C13AA63F2728461800D20CDD /* dua_lipa.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dua_lipa.mp4; sourceTree = "<group>"; };
 		C16495B0263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1268150054.brallion_horse_head_map.jpg; sourceTree = "<group>"; };
 		C16495BC2637151B00D6C40C /* LzJQx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LzJQx.png; sourceTree = "<group>"; };
 		C16495BF2637169A00D6C40C /* depth_scene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = depth_scene.png; sourceTree = "<group>"; };
+		C1CFE4462720B64900165F9E /* buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons.png; sourceTree = "<group>"; };
+		C1CFE44A27234C3800165F9E /* SimpleAudioQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAudioQueue.swift; sourceTree = "<group>"; };
 		C1D97A922631E5120031EA94 /* autostereogramKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = autostereogramKernel.metal; sourceTree = "<group>"; };
+		C1EDFF8A270BCC0D00D5C02E /* Rectangle@3x-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle@3x-1024.png"; path = "Assets.xcassets/AppIcon.appiconset/Rectangle@3x-1024.png"; sourceTree = "<group>"; };
+		C1F78FD6270FC10E008823F0 /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10B70AE2726FC3E007FAAD6 /* CoreAudio.framework in Frameworks */,
+				C10B70AF2726FC3E007FAAD6 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +115,8 @@
 			children = (
 				6018088822E871F2009057A8 /* MetalCamera */,
 				6018088722E871F2009057A8 /* Products */,
+				C100BA7827173B2B00AF9F2C /* MetalCamera-Bridging-Header.h */,
+				C10B70AB2726FC3E007FAAD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,9 +150,16 @@
 		6018089F22E872AD009057A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C13AA63F2728461800D20CDD /* dua_lipa.mp4 */,
+				C10B70B427276F09007FAAD6 /* farucca.mp4 */,
+				C10B70B227276DE8007FAAD6 /* testcall.mp4 */,
+				C100BA622714A36500AF9F2C /* test.mp4 */,
+				C100BA602714915D00AF9F2C /* sample-mp4-video.mp4 */,
+				C100BA5E271488E300AF9F2C /* sample-5s.mp4 */,
 				C16495BF2637169A00D6C40C /* depth_scene.png */,
 				C16495BC2637151B00D6C40C /* LzJQx.png */,
 				C16495B0263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg */,
+				C1EDFF8A270BCC0D00D5C02E /* Rectangle@3x-1024.png */,
 				C12CA00126332D5B002C3FDE /* lighthouse2.png */,
 				609EFCBF231BAA3900387076 /* lighthouse.jpg */,
 				609EFCB5231B226C00387076 /* Assets.xcassets */,
@@ -133,6 +181,10 @@
 			isa = PBXGroup;
 			children = (
 				6018088B22E871F2009057A8 /* MainViewController.swift */,
+				C1CFE44A27234C3800165F9E /* SimpleAudioQueue.swift */,
+				C1F78FD6270FC10E008823F0 /* MetalVideoRecorder.swift */,
+				C100BA6A2715B5D700AF9F2C /* SampleBufferSerializer.swift */,
+				C100BA772716491C00AF9F2C /* AAPLShaderTypes.h */,
 				601808AC22E87721009057A8 /* VideoCapture */,
 				601808A822E87693009057A8 /* MetalView */,
 			);
@@ -152,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				601808A622E8751F009057A8 /* VideoCapture.swift */,
+				C1CFE4462720B64900165F9E /* buttons.png */,
 			);
 			path = VideoCapture;
 			sourceTree = "<group>";
@@ -170,17 +223,42 @@
 				609EFCCB231BB70700387076 /* pixellateKernel.metal */,
 				609EFCCD231BC5B500387076 /* boxBlurKernel.metal */,
 				C1D97A922631E5120031EA94 /* autostereogramKernel.metal */,
+				C100BA6E27161EAE00AF9F2C /* shaders.metal */,
+				C100BA70271626DF00AF9F2C /* passthrough.metal */,
+				C100BA722716405400AF9F2C /* basic_shaders.metal */,
+				C100BA74271648B800AF9F2C /* AAPLShaders.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		C10B70AB2726FC3E007FAAD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C10B70AD2726FC3E007FAAD6 /* AudioToolbox.framework */,
+				C10B70AC2726FC3E007FAAD6 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C100BA7B27173BDD00AF9F2C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C100BA7D27173CAD00AF9F2C /* MetalCamera-Bridging-Header.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		6018088522E871F2009057A8 /* MetalCamera */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6018089822E871F3009057A8 /* Build configuration list for PBXNativeTarget "MetalCamera" */;
 			buildPhases = (
+				C100BA7B27173BDD00AF9F2C /* Headers */,
 				6018088222E871F2009057A8 /* Sources */,
 				6018088322E871F2009057A8 /* Frameworks */,
 				6018088422E871F2009057A8 /* Resources */,
@@ -206,6 +284,7 @@
 				TargetAttributes = {
 					6018088522E871F2009057A8 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -232,14 +311,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10B70B327276DE8007FAAD6 /* testcall.mp4 in Resources */,
 				C12CA00226332D5B002C3FDE /* lighthouse2.png in Resources */,
 				C16495BD2637151B00D6C40C /* LzJQx.png in Resources */,
 				6018089422E871F3009057A8 /* LaunchScreen.storyboard in Resources */,
+				C100BA612714918300AF9F2C /* sample-mp4-video.mp4 in Resources */,
 				C16495B1263614D700D6C40C /* 1268150054.brallion_horse_head_map.jpg in Resources */,
+				C10B70B527276F09007FAAD6 /* farucca.mp4 in Resources */,
 				C16495C02637169A00D6C40C /* depth_scene.png in Resources */,
 				609EFCC0231BAA3900387076 /* lighthouse.jpg in Resources */,
+				C100BA632714A36500AF9F2C /* test.mp4 in Resources */,
 				609EFCB6231B226C00387076 /* Assets.xcassets in Resources */,
 				6018088F22E871F2009057A8 /* Main.storyboard in Resources */,
+				C13AA6402728461800D20CDD /* dua_lipa.mp4 in Resources */,
+				C1CFE4472720B64900165F9E /* buttons.png in Resources */,
+				C1EDFF8B270BCC0D00D5C02E /* Rectangle@3x-1024.png in Resources */,
+				C100BA5F271488E300AF9F2C /* sample-5s.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,13 +337,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1CFE44B27234C3800165F9E /* SimpleAudioQueue.swift in Sources */,
 				C1D97A932631E5130031EA94 /* autostereogramKernel.metal in Sources */,
 				609EFCC8231BB4EF00387076 /* gammaKernel.metal in Sources */,
 				601808AA22E876B9009057A8 /* passthroughKernel.metal in Sources */,
+				C1F78FD7270FC10F008823F0 /* MetalVideoRecorder.swift in Sources */,
+				C100BA71271626DF00AF9F2C /* passthrough.metal in Sources */,
 				609EFCCC231BB70700387076 /* pixellateKernel.metal in Sources */,
 				609EFCCE231BC5B500387076 /* boxBlurKernel.metal in Sources */,
+				C100BA6B2715B5D800AF9F2C /* SampleBufferSerializer.swift in Sources */,
 				609EFCCA231BB5FC00387076 /* grayscaleKernel.metal in Sources */,
+				C100BA75271648B800AF9F2C /* AAPLShaders.metal in Sources */,
+				C100BA6F27161EAE00AF9F2C /* shaders.metal in Sources */,
 				601808A522E87342009057A8 /* MetalView.swift in Sources */,
+				C100BA732716405400AF9F2C /* basic_shaders.metal in Sources */,
 				601808A722E8751F009057A8 /* VideoCapture.swift in Sources */,
 				609EFCC6231BB41400387076 /* exposureKernel.metal in Sources */,
 				609EFCBA231BA5A000387076 /* brightnessKernel.metal in Sources */,
@@ -410,6 +504,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42N9D6EK46;
 				INFOPLIST_FILE = "$(SRCROOT)/MetalCamera/Resources/Info.plist";
@@ -418,8 +514,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GS.MetalCamera;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enterprisesworldwide.Autostereocam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetalCamera-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -429,6 +529,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42N9D6EK46;
 				INFOPLIST_FILE = "$(SRCROOT)/MetalCamera/Resources/Info.plist";
@@ -437,8 +539,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GS.MetalCamera;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enterprisesworldwide.Autostereocam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetalCamera-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

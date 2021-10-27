@@ -10,20 +10,22 @@ import UIKit
 import AVFoundation
 import CoreVideo
 
-public protocol VideoCaptureDelegate: class {
+public protocol AudioVideoCaptureDelegate: AnyObject {
     func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame: CVPixelBuffer?, timestamp: CMTime)
+    func audioCapture(_ capture: AudioCapture, didCaptureSample: CMSampleBuffer)
 }
 
 public class VideoCapture: NSObject {
     public var previewLayer: AVCaptureVideoPreviewLayer?
-    public weak var delegate: VideoCaptureDelegate?
+    public weak var delegate: AudioVideoCaptureDelegate?
     
     let captureSession = AVCaptureSession()
-    let videoOutput = AVCaptureVideoDataOutput()
+    let videoOutput:AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
+    let audioOutput:AVCaptureAudioDataOutput = AVCaptureAudioDataOutput()
     let queue = DispatchQueue(label: "camera-queue")
     
     public func setUp(sessionPreset: AVCaptureSession.Preset,
-                      frameRate: Int,
+                      frameRate: Int = 0,
                       completion: @escaping (Bool) -> Void) {
         queue.async {
             let success = self.setUpCamera(sessionPreset: sessionPreset, frameRate: frameRate)
@@ -106,13 +108,80 @@ public class VideoCapture: NSObject {
             captureSession.stopRunning()
         }
     }
+    
+    public func preferredSettings(for fileType: AVFileType) -> [String: Any]? {
+        return self.audioOutput.recommendedAudioSettingsForAssetWriter(writingTo: fileType)
+    }
+}
+
+public class AudioCapture : VideoCapture {
+    override public func setUp(sessionPreset: AVCaptureSession.Preset,
+                      frameRate: Int = 0,
+                      completion: @escaping (Bool) -> Void) {
+        queue.async {
+            let success = self.setUpMicrophone(sessionPreset: sessionPreset, frameRate: frameRate)
+            DispatchQueue.main.async {
+                completion(success)
+            }
+        }
+    }
+    
+    
+    func setUpMicrophone(sessionPreset: AVCaptureSession.Preset, frameRate: Int) -> Bool {
+        captureSession.beginConfiguration()
+        captureSession.sessionPreset = sessionPreset
+        
+        guard let audioCaptureDevice = AVCaptureDevice.default(for: AVMediaType.audio) else {
+            fatalError("Error: no video devices available")
+        }
+        
+        guard let audioInput = try? AVCaptureDeviceInput(device: audioCaptureDevice) else {
+            fatalError("Error: could not create AVCaptureDeviceInput")
+        }
+        
+        if captureSession.canAddInput(audioInput) {
+            captureSession.addInput(audioInput)
+        }
+        
+        audioOutput.setSampleBufferDelegate(self, queue: queue)
+        if captureSession.canAddOutput(audioOutput) {
+            captureSession.addOutput(audioOutput)
+        }
+
+        captureSession.commitConfiguration()
+        return true
+    }
 }
 
 extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        if output == self.videoOutput {
+            let timestamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+            let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+            delegate?.videoCapture(self, didCaptureVideoFrame: imageBuffer, timestamp: timestamp)
+        } else {
+            print("we lookin at an audio sample")
+        }
+    }
+    
+    public func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        print("captured")
         let timestamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
-        delegate?.videoCapture(self, didCaptureVideoFrame: imageBuffer, timestamp: timestamp)
+//        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        
+    }
+}
+
+extension AudioCapture : AVCaptureAudioDataOutputSampleBufferDelegate {
+    public override func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        print("caught")
+        if output == self.audioOutput {
+            delegate?.audioCapture(self, didCaptureSample: sampleBuffer)
+        }
+    }
+    
+    public override func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        print("dropped")
     }
 }
